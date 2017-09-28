@@ -45,7 +45,9 @@ class ExampleViewController: UITableViewController {
 
       // iOS bug: https://github.com/lkzhao/Hero/issues/106 https://github.com/lkzhao/Hero/issues/79
       DispatchQueue.main.async {
-        self.present(vc, animated: true, completion: nil)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController!.pushViewController(vc, animated: true)
+//        self.present(vc, animated: true, completion: nil)
       }
     }
   }
